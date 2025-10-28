@@ -6,21 +6,27 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "biome check",
+    "lint:fix": "biome check src/ --fix",
     "format": "biome format --write"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "framer-motion": "^12.23.24",
+    "lucide-react": "^0.546.0",
+    "next": "15.5.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.6"
+    "react-icons": "^5.5.0",
+    "react-slick": "^0.31.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@biomejs/biome": "2.2.0",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
+    "@types/react-slick": "^0.23.13",
     "tailwindcss": "^4",
-    "@biomejs/biome": "2.2.0"
+    "typescript": "^5"
   }
 }

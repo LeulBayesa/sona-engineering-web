@@ -1,11 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "@/assets/images/s.svg";
 import AboutSnapshot from "@/components/AboutSnapshot";
-import FeaturedProjects from "@/components/FeaturedProjects";
-import MainBody from "@/components/MainBody";
-import Services from "@/components/Services";
-import Testimonials from "@/components/Testimonials";
+import CommonHeader from "@/components/CommonHeader";
 import useNavbarEffect from "@/hooks/useNavbarEffect";
 
 export default function Home() {
@@ -16,12 +14,8 @@ export default function Home() {
   }, []);
 
   return (
-    <>
-      <MainBody />
-      <Services />
+    <CommonHeader title="About Us" subTitle="Our company" src={Image} alt="Projects Image">
       <AboutSnapshot />
-      <FeaturedProjects />
-      <Testimonials />
-    </>
+    </CommonHeader>
   );
 }
