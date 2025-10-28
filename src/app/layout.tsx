@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       "Sona Computer Engineering provides innovative IT solutions and software development services for businesses. Partner with us for reliable technology solutions.",
     images: [
       {
-        url: "https://sona-engineering.com/sona-logo.jpg",
+        url: "https://sona-engineering.com/logo.png",
       },
     ],
     locale: "en_US",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "Sona Computer Engineering | IT Solutions & Software Services",
     description:
       "Sona Computer Engineering provides innovative IT solutions and software development services for businesses. Partner with us for reliable technology solutions.",
-    images: ["https://sona-engineering.com/sona-logo.jpg"],
+    images: ["https://sona-engineering.com/logo.png"],
   },
 };
 
