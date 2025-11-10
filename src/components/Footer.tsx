@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-  Phone,
-  Twitter,
-} from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import logo from "../assets/images/SonaLogo1.png";
@@ -107,9 +99,7 @@ export default function Footer({
           </div>
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <h3 className="text-white text-2xl font-bold mb-4">
-              {companyName}
-            </h3>
+            <h3 className="text-white text-2xl font-bold mb-4">{companyName}</h3>
             <p className="text-gray-400 mb-6 max-w-md">{description}</p>
 
             {/* Contact Info */}
@@ -117,10 +107,7 @@ export default function Footer({
               {contactInfo.email && (
                 <div className="flex items-start gap-3">
                   <Mail className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <a
-                    href={`mailto:${contactInfo.email}`}
-                    className="hover:text-primary transition-colors"
-                  >
+                  <a href={`mailto:${contactInfo.email}`} className="hover:text-primary transition-colors">
                     {contactInfo.email}
                   </a>
                 </div>
@@ -128,10 +115,7 @@ export default function Footer({
               {contactInfo.phone && (
                 <div className="flex items-start gap-3">
                   <Phone className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <a
-                    href={`tel:${contactInfo.phone}`}
-                    className="hover:text-primary transition-colors"
-                  >
+                  <a href={`tel:${contactInfo.phone}`} className="hover:text-primary transition-colors">
                     {contactInfo.phone}
                   </a>
                 </div>
@@ -151,16 +135,11 @@ export default function Footer({
           {/* Footer Sections */}
           {sections.map((section) => (
             <div key={section.title}>
-              <h4 className="text-white font-semibold text-lg mb-4">
-                {section.title}
-              </h4>
+              <h4 className="text-white font-semibold text-lg mb-4">{section.title}</h4>
               <ul className="space-y-3">
                 {section.links.map((link) => (
                   <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="hover:text-primary transition-colors"
-                    >
+                    <Link href={link.href} className="hover:text-primary transition-colors">
                       {link.label}
                     </Link>
                   </li>
@@ -230,16 +209,10 @@ export default function Footer({
 
           {/* Legal Links */}
           <div className="flex gap-6 text-sm">
-            <Link
-              href="/privacy"
-              className="hover:text-primary transition-colors"
-            >
+            <Link href="/privacy" className="hover:text-primary transition-colors">
               Privacy Policy
             </Link>
-            <Link
-              href="/terms"
-              className="hover:text-primary transition-colors"
-            >
+            <Link href="/terms" className="hover:text-primary transition-colors">
               Terms of Service
             </Link>
           </div>

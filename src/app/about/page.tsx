@@ -23,10 +23,17 @@ export default function AboutPage() {
     <CommonHeader title="About Sona Engineering" subTitle="get to know us" src={headerImage} alt="Projects Image">
       <main className="relative bg-linear-to-b from-white via-gray-50 to-gray-100 overflow-hidden">
         {/* Decorative Watermarks */}
-        <Watermark position="top-left" src={Modern2} size={{ base: 360, sm: 200, lg: 280 }} opacity={25} rotate={90} />
+        <Watermark position="top-left" src={Modern2} size={{ base: 360, sm: 200, lg: 280 }} opacity={15} rotate={90} />
+        <Watermark
+          position="top-right"
+          src={Modern2}
+          size={{ base: 360, sm: 200, lg: 280 }}
+          opacity={15}
+          rotate={-120}
+        />
         <Watermark position="center" src={Modern} size={{ base: 760, sm: 200, lg: 300 }} opacity={2} />
-        <Watermark position="bottom-right" src={Modern} size={{ base: 360, sm: 200, lg: 300 }} opacity={50} />
-        <Watermark position="bottom-left" src={Modern} size={{ base: 360, sm: 200, lg: 300 }} opacity={50} />
+        <Watermark position="bottom-right" src={Modern} size={{ base: 360, sm: 200, lg: 300 }} opacity={20} />
+        <Watermark position="bottom-left" src={Modern} size={{ base: 360, sm: 200, lg: 300 }} opacity={20} />
 
         {/* Hero Section */}
         <section className="container mx-auto px-6 py-20 lg:py-32 relative z-10">

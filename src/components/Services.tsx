@@ -46,9 +46,9 @@ export default function Services() {
   return (
     <section className="relative bg-linear-to-b from-white via-gray-50 to-gray-100 py-20 lg:py-32 overflow-hidden">
       {/* Top-left Watermark */}
-      <Watermark src={Modern} position="top-left" size={{ base: 460, sm: 200, lg: 260 }} opacity={25} />
-      <Watermark src={Modern} position="center" size={{ base: 860, sm: 200, lg: 260 }} opacity={8} />
-      <Watermark src={Modern} position="bottom-right" size={{ base: 460, sm: 200, lg: 260 }} opacity={25} />
+      <Watermark src={Modern} position="top-left" size={{ base: 460, sm: 200, lg: 260 }} opacity={5} />
+      <Watermark src={Modern} position="center" size={{ base: 860, sm: 200, lg: 260 }} opacity={7} />
+      <Watermark src={Modern} position="bottom-right" size={{ base: 460, sm: 200, lg: 260 }} opacity={5} />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}

@@ -13,7 +13,7 @@ export default function AboutSnapshot() {
     <section className="relative bg-gradient-to-b from-white via-gray-50 to-gray-100 py-20 lg:py-32 overflow-hidden">
       {/* Top-left Watermark */}
       <Watermark position="top-left" size={{ base: 160, sm: 200, lg: 260 }} opacity={10} src={Modern2} />
-      <Watermark src={Modern} position="center" size={{ base: 660, sm: 200, lg: 260 }} opacity={5} />
+      <Watermark src={Modern} position="center" size={{ base: 660, sm: 200, lg: 260 }} opacity={7} />
       <Watermark icon={CameraIcon} position="bottom-right" size={{ base: 160, sm: 200, lg: 260 }} opacity={10} />
 
       <div className="container mx-auto px-4 relative z-10">

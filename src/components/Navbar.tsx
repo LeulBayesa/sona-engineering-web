@@ -1,8 +1,8 @@
 "use client";
 
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Image, { type StaticImageData } from "next/image";
 import logo from "../assets/images/SonaLogo2.png";
 
 interface NavItem {
@@ -58,9 +58,7 @@ export default function Navbar({
   const linkHoverClass = "hover:text-gray-300";
 
   return (
-    <nav
-      className={`${navBgClass} fixed w-full top-0 z-50 transition-all duration-300 ease-in-out`}
-    >
+    <nav className={`${navBgClass} fixed w-full top-0 z-50 transition-all duration-300 ease-in-out`}>
       {/* Top Bar (Logo + Menu Button) */}
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
