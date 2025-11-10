@@ -97,7 +97,7 @@ export default function Accordion({ classes, imageSrc = "/s.svg", imageAlt = "Pr
                 className="bg-white rounded-3xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden"
               >
                 <button
-                type="button"
+                  type="button"
                   onClick={() => setActiveIndex(activeIndex === item.id ? null : item.id)}
                   className={`flex justify-between items-center px-6 py-4 w-full focus:outline-none ${
                     activeIndex === item.id ? "bg-primary text-white" : "bg-white text-gray-800"
