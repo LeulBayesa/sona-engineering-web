@@ -1,7 +1,7 @@
 "use client";
 
-import Image, { StaticImageData } from "next/image";
-import { Computer, LucideIcon } from "lucide-react";
+import { Computer, type LucideIcon } from "lucide-react";
+import Image, { type StaticImageData } from "next/image";
 import React from "react";
 
 interface WatermarkProps {
@@ -9,12 +9,7 @@ interface WatermarkProps {
   alt?: string;
   size?: { base?: number; sm?: number; lg?: number };
   opacity?: number;
-  position?:
-    | "top-left"
-    | "top-right"
-    | "bottom-left"
-    | "bottom-right"
-    | "center";
+  position?: "top-left" | "top-right" | "bottom-left" | "bottom-right" | "center";
   rotate?: number;
   zIndex?: number;
   icon?: LucideIcon;

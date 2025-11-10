@@ -136,7 +136,7 @@ export default function Footer({
         </div>
 
         {/* Divider */}
-        <div className="border-t border-primary/40 my-8"/>
+        <div className="border-t border-primary/40 my-8" />
 
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">

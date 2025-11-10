@@ -64,7 +64,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
         <Navbar />
-        <main className="flex-grow">
+        <main className="grow">
           <Suspense fallback={Spinner}>{children}</Suspense>
         </main>
         <Footer />

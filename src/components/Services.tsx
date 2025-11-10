@@ -2,9 +2,9 @@
 
 import { Camera, Wifi, Wrench } from "lucide-react";
 import { useEffect } from "react";
+import Modern from "../assets/images/Vector.svg";
 import ServiceCard from "./ServiceCard";
 import Watermark from "./Watermark";
-import Modern from "../assets/images/Vector.svg";
 
 export default function Services() {
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function Services() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     cards.forEach((card) => observer.observe(card));
@@ -28,20 +28,17 @@ export default function Services() {
   const services = [
     {
       title: "Camera Installation",
-      description:
-        "Professional CCTV and security camera installation for homes and businesses.",
+      description: "Professional CCTV and security camera installation for homes and businesses.",
       Icon: Camera,
     },
     {
       title: "Networking Installation",
-      description:
-        "Setup wired and wireless networks for offices, data centers, and enterprises.",
+      description: "Setup wired and wireless networks for offices, data centers, and enterprises.",
       Icon: Wifi,
     },
     {
       title: "Maintenance & Support",
-      description:
-        "Reliable ongoing maintenance and technical support for IT and network systems.",
+      description: "Reliable ongoing maintenance and technical support for IT and network systems.",
       Icon: Wrench,
     },
   ];
@@ -49,31 +46,14 @@ export default function Services() {
   return (
     <section className="relative bg-gradient-to-b from-white via-gray-50 to-gray-100 py-20 lg:py-32 overflow-hidden">
       {/* Top-left Watermark */}
-      <Watermark
-        src={Modern}
-        position="top-left"
-        size={{ base: 460, sm: 200, lg: 260 }}
-        opacity={25}
-      />
-      <Watermark
-        src={Modern}
-        position="center"
-        size={{ base: 860, sm: 200, lg: 260 }}
-        opacity={8}
-      />
-      <Watermark
-        src={Modern}
-        position="bottom-right"
-        size={{ base: 460, sm: 200, lg: 260 }}
-        opacity={25}
-      />
+      <Watermark src={Modern} position="top-left" size={{ base: 460, sm: 200, lg: 260 }} opacity={25} />
+      <Watermark src={Modern} position="center" size={{ base: 860, sm: 200, lg: 260 }} opacity={8} />
+      <Watermark src={Modern} position="bottom-right" size={{ base: 460, sm: 200, lg: 260 }} opacity={25} />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h3 className="text-primary text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-3">
-            Our Services
-          </h3>
+          <h3 className="text-primary text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-3">Our Services</h3>
           <p className="text-gray-700 text-base md:text-lg max-w-3xl mx-auto">
             Quality solutions to secure and optimize your business operations.
           </p>
