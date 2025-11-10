@@ -3,8 +3,8 @@
 import { motion, type Variants } from "framer-motion";
 import { Quote } from "lucide-react";
 import Slider, { type Settings } from "react-slick";
-import Watermark from "./Watermark";
 import Modern from "../assets/images/Vector.svg";
+import Watermark from "./Watermark";
 
 interface Testimonial {
   name: string;
@@ -23,20 +23,17 @@ export default function Testimonials() {
     {
       name: "Mekdes Alem",
       role: "IT Manager, Addis Enterprises",
-      message:
-        "Professional, reliable, and skilled team. They completed our network installation ahead of schedule.",
+      message: "Professional, reliable, and skilled team. They completed our network installation ahead of schedule.",
     },
     {
       name: "Samuel Getachew",
       role: "Operations Director, SecureHome",
-      message:
-        "Excellent maintenance support. Our IT systems have never run smoother.",
+      message: "Excellent maintenance support. Our IT systems have never run smoother.",
     },
     {
       name: "Lily Tesfaye",
       role: "Founder, SecureHome",
-      message:
-        "Amazing team! They handle everything from networking to security installation seamlessly.",
+      message: "Amazing team! They handle everything from networking to security installation seamlessly.",
     },
   ];
 
@@ -92,9 +89,7 @@ export default function Testimonials() {
   if (!testimonials.length) {
     return (
       <section className="py-20 text-center bg-gradient-to-b from-white via-gray-50 to-gray-100">
-        <p className="text-gray-600 text-lg">
-          No testimonials available at this time.
-        </p>
+        <p className="text-gray-600 text-lg">No testimonials available at this time.</p>
       </section>
     );
   }
@@ -102,24 +97,9 @@ export default function Testimonials() {
   return (
     <section className="relative bg-gradient-to-t from-white via-gray-50 to-gray-100 py-20 lg:py-32 overflow-hidden">
       {/* Top-left Watermark */}
-      <Watermark
-        src={Modern}
-        position="top-left"
-        size={{ base: 460, sm: 200, lg: 260 }}
-        opacity={25}
-      />
-      <Watermark
-        src={Modern}
-        position="center"
-        size={{ base: 860, sm: 200, lg: 260 }}
-        opacity={8}
-      />
-      <Watermark
-        src={Modern}
-        position="bottom-right"
-        size={{ base: 460, sm: 200, lg: 260 }}
-        opacity={25}
-      />
+      <Watermark src={Modern} position="top-left" size={{ base: 460, sm: 200, lg: 260 }} opacity={25} />
+      <Watermark src={Modern} position="center" size={{ base: 860, sm: 200, lg: 260 }} opacity={8} />
+      <Watermark src={Modern} position="bottom-right" size={{ base: 460, sm: 200, lg: 260 }} opacity={25} />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
@@ -134,9 +114,8 @@ export default function Testimonials() {
             What Our Clients Say
           </h3>
           <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
-            Hear from businesses that trust{" "}
-            <span className="font-semibold text-primary">Sona Engineering</span>{" "}
-            for their IT solutions.
+            Hear from businesses that trust <span className="font-semibold text-primary">Sona Engineering</span> for
+            their IT solutions.
           </p>
         </motion.div>
 
@@ -155,20 +134,14 @@ export default function Testimonials() {
                 className="px-4 py-4 md:px-4 "
               >
                 <div className="relative bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-8 flex flex-col justify-between min-h-[300px] transition-all duration-300">
-                  <Quote
-                    size={36}
-                    className="text-primary/70 mb-4 mx-auto"
-                    aria-hidden="true"
-                  />
+                  <Quote size={36} className="text-primary/70 mb-4 mx-auto" aria-hidden="true" />
 
                   <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-6 flex-grow text-center">
                     “{t.message}”
                   </p>
 
                   <div className="mt-auto text-center">
-                    <h4 className="text-gray-900 font-semibold text-lg">
-                      {t.name}
-                    </h4>
+                    <h4 className="text-gray-900 font-semibold text-lg">{t.name}</h4>
                     <span className="text-gray-500 text-sm">{t.role}</span>
                   </div>
                 </div>

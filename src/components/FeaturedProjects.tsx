@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Code2, UsbIcon } from "lucide-react";
+import Modern from "../assets/images/Vector.svg";
 import ProjectCard from "./ProjectCard";
 import Watermark from "./Watermark";
-import Modern from "../assets/images/Vector.svg";
 
 interface Project {
   title: string;
@@ -19,8 +19,7 @@ export default function FeaturedProjects() {
   const projects: Project[] = [
     {
       title: "Office CCTV Installation",
-      description:
-        "Installed modern surveillance cameras and monitoring systems for corporate offices.",
+      description: "Installed modern surveillance cameras and monitoring systems for corporate offices.",
       images: ["/projects/cctv1.jpg", "/projects/cctv2.jpg"],
       location: "Addis Ababa",
       year: 2023,
@@ -28,8 +27,7 @@ export default function FeaturedProjects() {
     },
     {
       title: "Enterprise Networking Setup",
-      description:
-        "Complete networking setup including routers, switches, and WiFi coverage.",
+      description: "Complete networking setup including routers, switches, and WiFi coverage.",
       images: ["/projects/network1.jpg", "/projects/network2.jpg"],
       location: "Bahir Dar",
       year: 2024,
@@ -37,8 +35,7 @@ export default function FeaturedProjects() {
     },
     {
       title: "Maintenance Contract",
-      description:
-        "Ongoing IT system maintenance for multiple business branches.",
+      description: "Ongoing IT system maintenance for multiple business branches.",
       images: ["/projects/maintenance1.jpg"],
       location: "Oromia",
       year: 2023,
