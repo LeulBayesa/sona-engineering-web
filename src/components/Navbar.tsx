@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Image, { type StaticImageData } from "next/image";
+import logo from "../assets/images/SonaLogo2.png";
 
 interface NavItem {
   label: string;
@@ -10,11 +12,13 @@ interface NavItem {
 
 interface NavbarProps {
   brandName?: string;
+  brandLogo?: StaticImageData | string;
   navItems?: NavItem[];
 }
 
 export default function Navbar({
   brandName = "Sona Computer Engineering",
+  brandLogo = logo,
   navItems = [
     { label: "Home", href: "/" },
     { label: "Projects", href: "/portfolio" },
@@ -54,14 +58,21 @@ export default function Navbar({
   const linkHoverClass = "hover:text-gray-300";
 
   return (
-    <nav className={`${navBgClass} fixed w-full top-0 z-50 transition-all duration-300 ease-in-out`}>
+    <nav
+      className={`${navBgClass} fixed w-full top-0 z-50 transition-all duration-300 ease-in-out`}
+    >
       {/* Top Bar (Logo + Menu Button) */}
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Brand */}
-          <Link href="/" className={`text-2xl font-bold ${textColorClass} hover:text-gray-300 transition-colors`}>
-            {brandName}
-          </Link>
+          <Image
+            src={brandLogo}
+            height={160}
+            width={160}
+            alt="logo"
+            aria-hidden="true"
+            className="hover:text-gray-300 transition-colors cursor-pointer"
+          />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
