@@ -47,7 +47,7 @@ export default function Services() {
   ];
 
   return (
-    <section className="relative bg-gradient-to-b from-white via-gray-50 to-gray-100 py-20 lg:py-32 overflow-hidden">
+    <section className="relative bg-linear-to-b from-white via-gray-50 to-gray-100 py-20 lg:py-32 overflow-hidden">
       {/* Top-left Watermark */}
       <Watermark
         src={Modern}

@@ -48,7 +48,7 @@ export default function FeaturedProjects() {
 
   if (!projects.length) {
     return (
-      <section className="py-20 text-center bg-gradient-to-b from-white via-gray-50 to-gray-100">
+      <section className="py-20 text-center bg-linear-to-b from-white via-gray-50 to-gray-100">
         <p className="text-gray-600 text-lg">
           No projects available at this time.
         </p>
@@ -57,7 +57,7 @@ export default function FeaturedProjects() {
   }
 
   return (
-    <section className="relative bg-gradient-to-b from-white via-gray-50 to-gray-100 py-20 lg:py-32 overflow-hidden">
+    <section className="relative bg-linear-to-b from-white via-gray-50 to-gray-100 py-20 lg:py-32 overflow-hidden">
       <Watermark
         src={Modern}
         position="top-left"
