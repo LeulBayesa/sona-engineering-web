@@ -1,20 +1,36 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CameraIcon, Wrench } from "lucide-react";
+import { CameraIcon } from "lucide-react";
 import Image from "next/image";
+import aboutImage from "../assets/images/Home.webp";
 import Modern from "../assets/images/Group.svg";
 import Modern2 from "../assets/images/Group2.svg";
-import aboutImage from "../assets/images/Home.webp";
 import Watermark from "./Watermark";
+import { Button } from "./ui/button";
 
 export default function AboutSnapshot() {
   return (
     <section className="relative bg-gradient-to-b from-white via-gray-50 to-gray-100 py-20 lg:py-32 overflow-hidden">
       {/* Top-left Watermark */}
-      <Watermark position="top-left" size={{ base: 160, sm: 200, lg: 260 }} opacity={10} src={Modern2} />
-      <Watermark src={Modern} position="center" size={{ base: 660, sm: 200, lg: 260 }} opacity={7} />
-      <Watermark icon={CameraIcon} position="bottom-right" size={{ base: 160, sm: 200, lg: 260 }} opacity={10} />
+      <Watermark
+        position="top-left"
+        size={{ base: 160, sm: 200, lg: 260 }}
+        opacity={10}
+        src={Modern2}
+      />
+      <Watermark
+        src={Modern}
+        position="center"
+        size={{ base: 660, sm: 200, lg: 260 }}
+        opacity={7}
+      />
+      <Watermark
+        icon={CameraIcon}
+        position="bottom-right"
+        size={{ base: 160, sm: 200, lg: 260 }}
+        opacity={10}
+      />
 
       <div className="container mx-auto px-4 relative z-10">
         <div
@@ -54,19 +70,23 @@ export default function AboutSnapshot() {
               About Sona Engineering
             </h3>
             <p className="text-gray-700 text-base md:text-lg mb-4">
-              Sona Engineering is a leading provider of IT solutions, networking, and security systems across Ethiopia.
-              We empower businesses with modern technology, secure infrastructures, and professional support services.
+              Sona Engineering is a leading provider of IT solutions,
+              networking, and security systems across Ethiopia. We empower
+              businesses with modern technology, secure infrastructures, and
+              professional support services.
             </p>
             <p className="text-gray-700 text-base md:text-lg mb-6">
-              Our team of skilled engineers ensures that every project is executed with precision, safety, and
-              efficiency.
+              Our team of skilled engineers ensures that every project is
+              executed with precision, safety, and efficiency.
             </p>
-            <a
-              href="/about"
-              className="inline-block px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:opacity-90 hover:shadow-xl transition-all duration-300"
-            >
-              Learn More
-            </a>
+            <Button className="text-white" size="lg">
+              <a
+                href="/about"
+                // className="inline-block px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:opacity-90 hover:shadow-xl transition-all duration-300"
+              >
+                Learn More
+              </a>
+            </Button>
           </motion.div>
         </div>
       </div>

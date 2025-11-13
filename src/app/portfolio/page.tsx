@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
-import Accordion from "@/components/Accordion";
+import Modern from "@/assets/images/Vector.svg";
 import CommonHeader from "@/components/CommonHeader";
 import ProjectCard from "@/components/ProjectCard";
+import ProjectStrength from "@/components/ProjectStrength";
+import Watermark from "@/components/Watermark";
 import useNavbarEffect from "@/hooks/useNavbarEffect";
 
 // Use string path for static image asset
@@ -87,14 +89,16 @@ export default function ProjectPage() {
       alt="Projects Image"
     >
       {/* Projects Section */}
-      <section className="mx-auto px-4 py-12 min-h-screen" aria-labelledby="projects-heading">
+      <section className="relative overflow-hidden mx-auto px-4 py-12 min-h-screen" aria-labelledby="projects-heading">
+        <Watermark src={Modern} position="center" size={{ base: 860, sm: 200, lg: 260 }} opacity={5} rotate={90} />
+        <Watermark src={Modern} position="bottom-right" size={{ base: 460, sm: 200, lg: 260 }} opacity={5} />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={project.title} {...project} index={index} />
           ))}
         </div>
       </section>
-      <Accordion />
+      <ProjectStrength />
     </CommonHeader>
   );
 }

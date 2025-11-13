@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Image from "@/assets/images/s.svg";
 import CommonHeader from "@/components/CommonHeader";
-import Services from "@/components/Services";
+import ServicesPage from "@/components/Services";
 import useNavbarEffect from "@/hooks/useNavbarEffect";
 
 export default function Home() {
@@ -14,8 +14,13 @@ export default function Home() {
   }, []);
 
   return (
-    <CommonHeader title="Our Services" subTitle="Our company" src={Image} alt="Projects Image">
-      <Services />
+    <CommonHeader
+      title="Our Services"
+      subTitle="Comprehensive IT solutions designed to secure, optimize, and streamline your business operations"
+      src={Image}
+      alt="Projects Image"
+    >
+      <ServicesPage />
     </CommonHeader>
   );
 }

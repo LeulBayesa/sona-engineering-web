@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cpu, MapPin, ShieldCheck, Target, Users } from "lucide-react";
+import { CheckCircle, Cpu, MapPin, ShieldCheck, Target, Users } from "lucide-react";
 import Image from "next/image";
 import { useEffect } from "react";
 import Modern from "@/assets/images/Group.svg";
@@ -9,6 +9,8 @@ import aboutHero from "@/assets/images/Home.webp";
 import headerImage from "@/assets/images/s.svg";
 import Modern2 from "@/assets/images/Vector.svg";
 import CommonHeader from "@/components/CommonHeader";
+import { mainServices } from "@/components/servicesList";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Watermark from "@/components/Watermark";
 import useNavbarEffect from "@/hooks/useNavbarEffect";
 
@@ -77,7 +79,7 @@ export default function AboutPage() {
         </section>
 
         {/* Mission & Vision Section */}
-        <section className="bg-white py-16">
+        <section className="bg-white py-6">
           <div className="container mx-auto px-6 text-center">
             <motion.h2
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-12"
@@ -85,10 +87,10 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              Our Mission & Vision
+              Our Mission, Vision & Values
             </motion.h2>
 
-            <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-10 max-w-8xl mx-auto">
               <motion.div
                 className="p-8 rounded-xl bg-primary/10 border border-primary/20 shadow-md hover:shadow-lg transition"
                 initial={{ opacity: 0, y: 30 }}
@@ -116,11 +118,24 @@ export default function AboutPage() {
                   a secure, connected, and innovative digital future.
                 </p>
               </motion.div>
+              <motion.div
+                className="p-8 rounded-xl bg-cyan-50 border border-cyan-200 shadow-md hover:shadow-lg transition"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <ShieldCheck className="mx-auto text-cyan-600 mb-4" size={48} />
+                <h3 className="text-xl font-semibold mb-2">Our Values</h3>
+                <p className="text-gray-700">
+                  To become Ethiopia’s most trusted name in integrated IT solutions and engineering excellence fostering
+                  a secure, connected, and innovative digital future.
+                </p>
+              </motion.div>
             </div>
           </div>
         </section>
         {/* Goals Section */}
-        <section className="bg-linear-to-b from-white via-gray-50 to-purple-50 py-20">
+        <section className="bg-linear-to-b from-white via-gray-50 to-purple-50 py-4">
           <div className="container mx-auto px-6 text-center">
             <motion.h2
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-12"
@@ -130,43 +145,53 @@ export default function AboutPage() {
             >
               Our Goals
             </motion.h2>
+            <div className="grid md:grid-cols-3 gap-10 max-w-8xl mx-auto">
+              <motion.div
+                className="p-8 rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <MapPin className="mx-auto text-primary mb-4" size={48} />
+                <h3 className="text-xl font-semibold mb-2">Nationwide Reach</h3>
+                <p className="text-gray-700">
+                  Expand our services across Ethiopia, ensuring that every region benefits from reliable and secure
+                  technology solutions.
+                </p>
+              </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: MapPin,
-                  title: "Nationwide Reach",
-                  desc: "Expand our services across Ethiopia, ensuring that every region benefits from reliable and secure technology solutions.",
-                },
-                {
-                  icon: Cpu,
-                  title: "Technological Excellence",
-                  desc: "Continuously adopt the latest innovations in IT and engineering to deliver world-class infrastructure and digital transformation projects.",
-                },
-                {
-                  icon: Users,
-                  title: "Customer Empowerment",
-                  desc: "Build long-term partnerships with clients through transparency, professionalism, and dedicated technical support.",
-                },
-              ].map(({ icon: Icon, title, desc }, i) => (
-                <motion.div
-                  key={title}
-                  className="p-8 rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                >
-                  <Icon className="text-primary mb-4" size={42} />
-                  <h3 className="text-xl font-semibold mb-2">{title}</h3>
-                  <p className="text-gray-700">{desc}</p>
-                </motion.div>
-              ))}
+              <motion.div
+                className="p-8 rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <Cpu className="mx-auto text-primary mb-4" size={48} />
+                <h3 className="text-xl font-semibold mb-2">Technological Excellence</h3>
+                <p className="text-gray-700">
+                  Continuously adopt the latest innovations in IT and engineering to deliver world-class infrastructure
+                  and digital transformation projects.
+                </p>
+              </motion.div>
+              <motion.div
+                className="p-8 rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <Users className="mx-auto text-primary mb-4" size={48} />
+                <h3 className="text-xl font-semibold mb-2">Customer Empowerment</h3>
+                <p className="text-gray-700">
+                  Build long-term partnerships with clients through transparency, professionalism, and dedicated
+                  technical support.
+                </p>
+              </motion.div>
             </div>
           </div>
         </section>
 
         {/* Expertise Section */}
-        <section className="py-20 bg-linear-to-br from-primary/10 via-white to-purple-50">
+        <section className="py-4">
           <div className="container mx-auto px-6">
             <motion.h2
               className="text-center text-3xl md:text-4xl font-bold mb-12 text-gray-900"
@@ -175,39 +200,34 @@ export default function AboutPage() {
             >
               What We Do
             </motion.h2>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: Cpu,
-                  title: "IT Infrastructure",
-                  desc: "Designing and implementing reliable enterprise networks and server systems.",
-                },
-                {
-                  icon: ShieldCheck,
-                  title: "Security Systems",
-                  desc: "Delivering cutting-edge surveillance, access control, and protection solutions.",
-                },
-                {
-                  icon: Users,
-                  title: "Support & Maintenance",
-                  desc: "Providing 24/7 technical support, troubleshooting, and system optimization.",
-                },
-              ].map(({ icon: Icon, title, desc }, i) => (
-                <motion.div
-                  key={title}
-                  className="p-8 rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                >
-                  <Icon className="text-primary mb-4" size={42} />
-                  <h3 className="text-xl font-semibold mb-2">{title}</h3>
-                  <p className="text-gray-700">{desc}</p>
-                </motion.div>
-              ))}
-            </div>
           </div>
+          <Accordion type="single" collapsible className="max-w-4xl mx-auto space-y-4">
+            {mainServices.map((service, i) => (
+              <AccordionItem
+                key={i}
+                value={`service-${i}`}
+                className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm"
+              >
+                <AccordionTrigger className="px-6 py-5 hover:bg-gray-50 text-left">
+                  <div className="flex items-center gap-3">
+                    <service.icon className="w-5 h-5 text-primary" />
+                    <span className="font-medium text-gray-900">{service.title}</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 pb-6">
+                  <p className="text-foreground mb-6">{service.description}</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {service.features.map((feature, fIndex) => (
+                      <div key={fIndex} className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-primary mt-0.5" />
+                        <span className="text-foreground">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </section>
 
         {/* Map Section */}

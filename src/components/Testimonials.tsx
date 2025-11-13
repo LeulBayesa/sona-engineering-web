@@ -52,6 +52,8 @@ export default function Testimonials() {
       { breakpoint: 1280, settings: { slidesToShow: 3 } },
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
       { breakpoint: 768, settings: { slidesToShow: 1 } },
+      { breakpoint: 640, settings: { slidesToShow: 1 } },
+      { breakpoint: 0, settings: { slidesToShow: 1 } },
     ],
     appendDots: (dots) => (
       <div>
@@ -95,7 +97,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="relative bg-gradient-to-t from-white via-gray-50 to-gray-100 py-20 lg:py-32 overflow-hidden">
+    <section className="relative bg-gradient-to-t from-white via-gray-50 to-gray-100 py-20 lg:py-8 overflow-hidden">
       {/* Top-left Watermark */}
       <Watermark src={Modern} position="top-left" size={{ base: 460, sm: 200, lg: 260 }} opacity={5} />
       <Watermark src={Modern} position="center" size={{ base: 860, sm: 200, lg: 260 }} opacity={7} />
