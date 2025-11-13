@@ -91,14 +91,14 @@ export default function Testimonials() {
 
   if (!testimonials.length) {
     return (
-      <section className="py-20 text-center bg-gradient-to-b from-white via-gray-50 to-gray-100">
+      <section className="py-20 text-center bg-linear-to-b from-white via-gray-50 to-gray-100">
         <p className="text-gray-600 text-lg">No testimonials available at this time.</p>
       </section>
     );
   }
 
   return (
-    <section className="relative bg-gradient-to-t from-white via-gray-50 to-gray-100 py-20 lg:py-8 overflow-hidden">
+    <section className="relative bg-linear-to-t from-white via-gray-50 to-gray-100 py-20 lg:py-8 overflow-hidden">
       {/* Top-left Watermark */}
       <Watermark src={Modern} position="top-left" size={{ base: 460, sm: 200, lg: 260 }} opacity={5} />
       <Watermark src={Modern} position="center" size={{ base: 860, sm: 200, lg: 260 }} opacity={7} />
@@ -139,7 +139,7 @@ export default function Testimonials() {
                 <div className="relative bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-8 flex flex-col justify-between min-h-[300px] transition-all duration-300">
                   <Quote size={36} className="text-primary/70 mb-4 mx-auto" aria-hidden="true" />
 
-                  <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-6 flex-grow text-center">
+                  <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-6 grow text-center">
                     “{t.message}”
                   </p>
 

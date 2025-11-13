@@ -44,11 +44,11 @@ const CardUI = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-b my-16">
+    <div className="bg-linear-to-b my-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-primary to-primary/80 bg-clip-text text-transparent">
             Our Models
           </h2>
           <p className="text-gray-700 max-w-3xl mx-auto">What we offer to help your business grow and innovate.</p>
@@ -63,9 +63,9 @@ const CardUI = () => {
               hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-primary hover:-translate-y-2 flex flex-col"
               style={{ animationDelay: `${index / 9}s` }}
             >
-              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute top-0 left-0 w-full h-full bg-linear-to-br from-primary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-              <div className="relative flex-grow">
+              <div className="relative grow">
                 <div className="w-16 h-16 mx-auto bg-primary/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   {model.icon}
                 </div>

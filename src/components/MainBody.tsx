@@ -72,7 +72,7 @@ export default function MainBody() {
                 <Button size="lg">
                   <Link
                     href="/contact"
-                    // className="inline-block bg-gradient-to-r from-[#850001] to-[#e70002] hover:opacity-90 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    // className="inline-block bg-linear-to-r from-[#850001] to-[#e70002] hover:opacity-90 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                   >
                     Contact Us
                   </Link>

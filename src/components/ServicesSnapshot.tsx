@@ -47,7 +47,7 @@ export default function ServicesSnapshot() {
   ];
 
   return (
-    <section className="relative bg-gradient-to-b from-white via-gray-50 to-gray-100 py-20 lg:py-32 overflow-hidden">
+    <section className="relative bg-linear-to-b from-white via-gray-50 to-gray-100 py-20 lg:py-32 overflow-hidden">
       {/* Background Watermarks */}
       <Watermark src={Modern} position="top-left" size={{ base: 460, sm: 200, lg: 260 }} opacity={5} />
       <Watermark src={Modern} position="center" size={{ base: 860, sm: 300, lg: 320 }} opacity={7} />

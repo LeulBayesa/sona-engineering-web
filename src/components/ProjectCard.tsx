@@ -129,7 +129,7 @@ export default function ProjectCard({
       animate="animate"
       whileHover="whileHover"
       whileTap={{ scale: 0.98 }}
-      className="group relative container rounded-3xl overflow-hidden bg-gradient-to-br from-white to-gray-50/50 backdrop-blur-sm shadow-lg border border-white/20 hover:border-primary/30 duration-500 flex flex-col w-full sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto"
+      className="group relative container rounded-3xl overflow-hidden bg-linear-to-br from-white to-gray-50/50 backdrop-blur-sm shadow-lg border border-white/20 hover:border-primary/30 duration-500 flex flex-col w-full sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto"
     >
       <div className="relative w-full h-48 sm:h-48 md:h-72 lg:h-80">
         <div className="relative w-full h-48 sm:h-48 md:h-64 lg:h-72">
@@ -144,7 +144,7 @@ export default function ProjectCard({
                   className="relative w-full h-56 sm:h-64 md:h-72 lg:h-80"
                 >
                   <SlideImage src={src} alt={`${title} image ${idx + 1}`} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent" />
                 </motion.div>
               ))}
             </Slider>
@@ -192,7 +192,7 @@ export default function ProjectCard({
         )}
       </div>
 
-      <div className="p-4 sm:p-6 flex flex-col flex-grow relative">
+      <div className="p-4 sm:p-6 flex flex-col grow relative">
         <motion.h3
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -206,7 +206,7 @@ export default function ProjectCard({
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-gray-600 text-sm sm:text-base leading-relaxed line-clamp-3 mb-4 sm:mb-6 flex-grow"
+          className="text-gray-600 text-sm sm:text-base leading-relaxed line-clamp-3 mb-4 sm:mb-6 grow"
         >
           {description}
         </motion.p>
@@ -215,7 +215,7 @@ export default function ProjectCard({
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mb-4"
+          className="w-full h-px bg-linear-to-r from-transparent via-gray-300 to-transparent mb-4"
         />
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between text-sm sm:text-base gap-2 sm:gap-0">

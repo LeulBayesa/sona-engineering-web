@@ -69,7 +69,7 @@ export default function ProjectStrength() {
             <div className="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-primary/50 rounded-tl-3xl z-10" />
             <div className="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-primary/50 rounded-br-3xl z-10" />
 
-            <div className="relative w-full aspect-[16/9]">
+            <div className="relative w-full aspect-video">
               <Image
                 src={imageSrc}
                 alt={"Project Strengths"}
@@ -77,7 +77,7 @@ export default function ProjectStrength() {
                 className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 40vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent" />
             </div>
 
             <div className="absolute bottom-4 left-4 bg-primary/90 text-white text-sm px-3 py-1.5 rounded-full flex items-center gap-1.5">
@@ -103,7 +103,7 @@ export default function ProjectStrength() {
                 >
                   <AccordionTrigger className="px-6 py-4 hover:bg-primary/5 text-left transition-colors duration-300">
                     <div className="flex items-center gap-3">
-                      <service.icon className="w-6 h-6 text-primary flex-shrink-0" />
+                      <service.icon className="w-6 h-6 text-primary shrink-0" />
                       <span className="font-medium text-gray-900">{service.title}</span>
                     </div>
                   </AccordionTrigger>

@@ -10,7 +10,7 @@ import Watermark from "@/components/Watermark";
 import { additionalServices, mainServices, processSteps, whyChooseUs } from "./servicesList";
 export default function ServicesPage() {
   return (
-    <section className="relative bg-gradient-to-b from-white via-gray-50 to-gray-100 overflow-hidden">
+    <section className="relative bg-linear-to-b from-white via-gray-50 to-gray-100 overflow-hidden">
       <Watermark src={Modern} position="top-left" size={{ base: 460, lg: 300 }} opacity={6} rotate={-120} />
       <Watermark src={Modern} position="top-right" size={{ base: 460, lg: 300 }} opacity={6} />
       <Watermark src={Modern} position="bottom-right" size={{ base: 460, lg: 300 }} opacity={6} />
@@ -61,9 +61,9 @@ export default function ServicesPage() {
 
               {/* Image / Icon Placeholder */}
               <div className="flex-1 w-full">
-                <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl h-[400px] flex items-center justify-center">
+                <div className="bg-linear-to-br from-primary/5 to-primary/10 rounded-2xl h-[400px] flex items-center justify-center">
                   {/* <service.icon className="w-32 h-32 text-primary/20" /> */}
-                  <div className="relative w-full aspect-[16/9]">
+                  <div className="relative w-full aspect-video">
                     <Image
                       src={service.picture}
                       alt={"Services image"}
