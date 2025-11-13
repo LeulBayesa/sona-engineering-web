@@ -2,9 +2,18 @@
 
 import emailjs from "@emailjs/browser";
 import { AnimatePresence, motion } from "framer-motion";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
+import Modern from "../assets/images/SonaLogo3.png";
+import Watermark from "./Watermark";
 
 export default function ContactUs() {
+  const contactInfo = {
+    email: "info@sona-engineering.com",
+    phone: "+251 (910) 14-7670",
+    address: "Addis Ababa, Ethiopia",
+    addressLine: "Mexico KKare, 4th FL",
+  };
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -63,7 +72,11 @@ export default function ContactUs() {
   };
 
   return (
-    <section className="flex justify-center py-20 px-4 bg-gray-50">
+    <section className="relative overflow-hidden flex flex-col-reverse md:flex-row justify-center md:gap-10 py-8 px-4 bg-gray-50">
+      <Watermark src={Modern} position="top-left" size={{ base: 260, lg: 150, sm: 50 }} opacity={3} />
+      <Watermark src={Modern} position="center" size={{ base: 460, lg: 150, sm: 50 }} opacity={3} />
+      <Watermark src={Modern} position="top-right" size={{ base: 260, lg: 150, sm: 50 }} opacity={3} />
+
       <motion.div
         className="w-full max-w-2xl rounded-3xl border border-gray-200 bg-white shadow-lg p-8 relative"
         initial={{ opacity: 0, y: 30 }}
@@ -153,6 +166,40 @@ export default function ContactUs() {
           )}
         </AnimatePresence>
       </motion.div>
+      <section className="py-2 bg-gray-50">
+        <div className="container mx-auto px-6 text-center">
+          <div className="space-y-3 text-sm">
+            {contactInfo.email && (
+              <div className="flex items-start gap-3">
+                <Mail className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                <a href={`mailto:${contactInfo.email}`} className="hover:text-primary transition-colors break-all">
+                  {contactInfo.email}
+                </a>
+              </div>
+            )}
+            {contactInfo.phone && (
+              <div className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-primary shrink-0" />
+                <a
+                  href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}
+                  className="hover:text-primary transition-colors"
+                >
+                  {contactInfo.phone}
+                </a>
+              </div>
+            )}
+            {(contactInfo.address || contactInfo.addressLine) && (
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                <div>
+                  <p className="text-sm">{contactInfo.address}</p>
+                  {contactInfo.addressLine && <p className="text-sm text-gray-400 mt-1">{contactInfo.addressLine}</p>}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
     </section>
   );
 }

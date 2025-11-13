@@ -1,19 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CameraIcon, Wrench } from "lucide-react";
+import { CameraIcon } from "lucide-react";
 import Image from "next/image";
 import Modern from "../assets/images/Group.svg";
 import Modern2 from "../assets/images/Group2.svg";
 import aboutImage from "../assets/images/Home.webp";
+import { Button } from "./ui/button";
 import Watermark from "./Watermark";
 
 export default function AboutSnapshot() {
   return (
-    <section className="relative bg-gradient-to-b from-white via-gray-50 to-gray-100 py-20 lg:py-32 overflow-hidden">
+    <section className="relative bg-linear-to-b from-white via-gray-50 to-gray-100 py-20 lg:py-32 overflow-hidden">
       {/* Top-left Watermark */}
       <Watermark position="top-left" size={{ base: 160, sm: 200, lg: 260 }} opacity={10} src={Modern2} />
-      <Watermark src={Modern} position="center" size={{ base: 660, sm: 200, lg: 260 }} opacity={5} />
+      <Watermark src={Modern} position="center" size={{ base: 660, sm: 200, lg: 260 }} opacity={7} />
       <Watermark icon={CameraIcon} position="bottom-right" size={{ base: 160, sm: 200, lg: 260 }} opacity={10} />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -61,12 +62,9 @@ export default function AboutSnapshot() {
               Our team of skilled engineers ensures that every project is executed with precision, safety, and
               efficiency.
             </p>
-            <a
-              href="/about"
-              className="inline-block px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:opacity-90 hover:shadow-xl transition-all duration-300"
-            >
-              Learn More
-            </a>
+            <Button className="text-white" size="lg">
+              <a href="/about">Learn More</a>
+            </Button>
           </motion.div>
         </div>
       </div>

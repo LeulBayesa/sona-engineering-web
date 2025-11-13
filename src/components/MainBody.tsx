@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useId, useState } from "react";
 import homeImage from "../assets/bg/BGB.jpg";
-import Button from "./ui/Button";
+import { Button } from "./ui/button";
 
 const animationClasses = ["animate-appearup", "animate-appearup-2", "animate-moveleft", "animate-appearup"];
 
@@ -26,7 +26,9 @@ export default function MainBody() {
       { threshold: 0.2 },
     );
 
-    document.querySelectorAll<HTMLElement>(".main-content, .main-img").forEach((el) => observer.observe(el));
+    document.querySelectorAll<HTMLElement>(".main-content, .main-img").forEach((el) => {
+      observer.observe(el);
+    });
 
     return () => observer.disconnect();
   }, []);
@@ -67,10 +69,10 @@ export default function MainBody() {
               </p>
 
               <div className="flex justify-center md:justify-start">
-                <Button variant="primary" size="lg">
+                <Button size="lg">
                   <Link
                     href="/contact"
-                    className="inline-block bg-gradient-to-r from-[#850001] to-[#e70002] hover:opacity-90 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    // className="inline-block bg-linear-to-r from-[#850001] to-[#e70002] hover:opacity-90 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                   >
                     Contact Us
                   </Link>

@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import AboutSnapshot from "@/components/AboutSnapshot";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import MainBody from "@/components/MainBody";
-import Services from "@/components/Services";
+import ServicesSnapshot from "@/components/ServicesSnapshot";
 import Testimonials from "@/components/Testimonials";
 import useNavbarEffect from "@/hooks/useNavbarEffect";
 
@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       <MainBody />
-      <Services />
+      <ServicesSnapshot />
       <AboutSnapshot />
       <FeaturedProjects />
       <Testimonials />

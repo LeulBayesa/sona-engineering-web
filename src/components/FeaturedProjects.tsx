@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, UsbIcon } from "lucide-react";
 import Modern from "../assets/images/Vector.svg";
 import ProjectCard from "./ProjectCard";
 import Watermark from "./Watermark";
@@ -45,17 +44,17 @@ export default function FeaturedProjects() {
 
   if (!projects.length) {
     return (
-      <section className="py-20 text-center bg-gradient-to-b from-white via-gray-50 to-gray-100">
+      <section className="py-20 text-center bg-linear-to-b from-white via-gray-50 to-gray-100">
         <p className="text-gray-600 text-lg">No projects available at this time.</p>
       </section>
     );
   }
 
   return (
-    <section className="relative bg-gradient-to-b from-white via-gray-50 to-gray-100 py-20 lg:py-32 overflow-hidden">
-      <Watermark src={Modern} position="top-left" size={{ base: 460, sm: 200, lg: 260 }} opacity={25} />
-      <Watermark src={Modern} position="center" size={{ base: 860, sm: 200, lg: 260 }} opacity={8} />
-      <Watermark src={Modern} position="bottom-right" size={{ base: 460, sm: 200, lg: 260 }} opacity={25} />
+    <section className="relative bg-linear-to-b from-white via-gray-50 to-gray-100 py-20 lg:py-32 overflow-hidden">
+      <Watermark src={Modern} position="top-left" size={{ base: 460, sm: 200, lg: 260 }} opacity={5} />
+      <Watermark src={Modern} position="center" size={{ base: 860, sm: 200, lg: 260 }} opacity={7} />
+      <Watermark src={Modern} position="bottom-right" size={{ base: 460, sm: 200, lg: 260 }} opacity={5} />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
@@ -81,7 +80,7 @@ export default function FeaturedProjects() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {projects.map((project, i) => (
-            <ProjectCard key={i} {...project} index={i} />
+            <ProjectCard key={crypto.randomUUID()} {...project} index={i} />
           ))}
         </div>
       </div>

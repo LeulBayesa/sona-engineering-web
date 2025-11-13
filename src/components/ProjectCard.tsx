@@ -5,6 +5,7 @@ import { ArrowUpRight, Calendar, MapPin, Tag } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Slider, { type Settings } from "react-slick";
+import FALLBACK_SRC from "@/assets/images/s.svg";
 
 interface ProjectCardProps {
   title: string;
@@ -15,6 +16,25 @@ interface ProjectCardProps {
   category?: string;
   link?: string;
   index?: number;
+}
+
+function SlideImage({ src, alt }: { src: string; alt: string }) {
+  const [currentSrc, setCurrentSrc] = useState(src);
+
+  return (
+    <Image
+      src={currentSrc}
+      alt={alt}
+      fill
+      onError={() => {
+        if (currentSrc !== FALLBACK_SRC) setCurrentSrc(FALLBACK_SRC);
+      }}
+      className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+      placeholder="blur"
+      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/..."
+    />
+  );
 }
 
 export default function ProjectCard({
@@ -28,7 +48,6 @@ export default function ProjectCard({
   index = 0,
 }: ProjectCardProps) {
   const sliderRef = useRef<Slider>(null);
-  const FALLBACK_SRC = "/s.svg";
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -46,28 +65,11 @@ export default function ProjectCard({
       { threshold: 0.2 },
     );
 
-    cards.forEach((card) => observer.observe(card));
+    cards.forEach((card) => {
+      observer.observe(card);
+    });
     return () => observer.disconnect();
   }, []);
-
-  function SlideImage({ src, alt }: { src: string; alt: string }) {
-    const [currentSrc, setCurrentSrc] = useState(src);
-
-    return (
-      <Image
-        src={currentSrc}
-        alt={alt}
-        fill
-        onError={() => {
-          if (currentSrc !== FALLBACK_SRC) setCurrentSrc(FALLBACK_SRC);
-        }}
-        className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        placeholder="blur"
-        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/..."
-      />
-    );
-  }
 
   const settings: Settings = {
     dots: true,
@@ -84,7 +86,7 @@ export default function ProjectCard({
         <ul className="slick-dots">{dots}</ul>
       </div>
     ),
-    customPaging: () => <button aria-label="Slide indicator"></button>,
+    customPaging: () => <button type="button" aria-label="Slide indicator"></button>,
   };
 
   const cardVariants: Variants = {
@@ -127,7 +129,7 @@ export default function ProjectCard({
       animate="animate"
       whileHover="whileHover"
       whileTap={{ scale: 0.98 }}
-      className="group relative container rounded-3xl overflow-hidden bg-gradient-to-br from-white to-gray-50/50 backdrop-blur-sm shadow-lg border border-white/20 hover:border-primary/30 duration-500 flex flex-col w-full sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto"
+      className="group relative container rounded-3xl overflow-hidden bg-linear-to-br from-white to-gray-50/50 backdrop-blur-sm shadow-lg border border-white/20 hover:border-primary/30 duration-500 flex flex-col w-full sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto"
     >
       <div className="relative w-full h-48 sm:h-48 md:h-72 lg:h-80">
         <div className="relative w-full h-48 sm:h-48 md:h-64 lg:h-72">
@@ -142,7 +144,7 @@ export default function ProjectCard({
                   className="relative w-full h-56 sm:h-64 md:h-72 lg:h-80"
                 >
                   <SlideImage src={src} alt={`${title} image ${idx + 1}`} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent" />
                 </motion.div>
               ))}
             </Slider>
@@ -190,7 +192,7 @@ export default function ProjectCard({
         )}
       </div>
 
-      <div className="p-4 sm:p-6 flex flex-col flex-grow relative">
+      <div className="p-4 sm:p-6 flex flex-col grow relative">
         <motion.h3
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -204,7 +206,7 @@ export default function ProjectCard({
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-gray-600 text-sm sm:text-base leading-relaxed line-clamp-3 mb-4 sm:mb-6 flex-grow"
+          className="text-gray-600 text-sm sm:text-base leading-relaxed line-clamp-3 mb-4 sm:mb-6 grow"
         >
           {description}
         </motion.p>
@@ -213,7 +215,7 @@ export default function ProjectCard({
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mb-4"
+          className="w-full h-px bg-linear-to-r from-transparent via-gray-300 to-transparent mb-4"
         />
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between text-sm sm:text-base gap-2 sm:gap-0">
