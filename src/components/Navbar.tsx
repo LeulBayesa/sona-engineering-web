@@ -3,7 +3,7 @@
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import logoLight from "../assets/images/SonaLogo1.png";
+// import logoLight from "../assets/images/SonaLogo1.png";
 import logoDark from "../assets/images/SonaLogo2.png";
 
 interface NavItem {
@@ -19,8 +19,8 @@ interface NavbarProps {
 }
 
 export default function Navbar({
-  brandName = "Sona Computer Engineering",
-  brandLogoLight = logoLight,
+  // brandName = "Sona Computer Engineering",
+  // brandLogoLight = logoLight,
   brandLogoDark = logoDark,
   navItems = [
     { label: "Home", href: "/" },

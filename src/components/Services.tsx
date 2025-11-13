@@ -34,7 +34,7 @@ export default function ServicesPage() {
         <div className="space-y-28">
           {mainServices.map((service, index) => (
             <motion.div
-              key={index}
+              key={crypto.randomUUID()}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -50,8 +50,8 @@ export default function ServicesPage() {
                 <p className="text-lg text-muted-foreground mb-6">{service.description}</p>
                 <p className="text-foreground mb-8">{service.detailedInfo}</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {service.features.map((feature, i) => (
-                    <div key={i} className="flex items-start gap-3">
+                  {service.features.map((feature, _i) => (
+                    <div key={crypto.randomUUID()} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-0.5" />
                       <span className="text-foreground">{feature}</span>
                     </div>
@@ -90,7 +90,7 @@ export default function ServicesPage() {
           <Accordion type="single" collapsible className="max-w-4xl mx-auto space-y-4">
             {additionalServices.map((service, i) => (
               <AccordionItem
-                key={i}
+                key={crypto.randomUUID()}
                 value={`service-${i}`}
                 className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm"
               >
@@ -103,8 +103,8 @@ export default function ServicesPage() {
                 <AccordionContent className="px-8 pb-6">
                   <p className="text-foreground mb-6">{service.description}</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {service.features.map((feature, fIndex) => (
-                      <div key={fIndex} className="flex items-start gap-3">
+                    {service.features.map((feature, _fIndex) => (
+                      <div key={crypto.randomUUID()} className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-primary mt-0.5" />
                         <span className="text-foreground">{feature}</span>
                       </div>
@@ -130,7 +130,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {whyChooseUs.map((item, i) => (
               <motion.div
-                key={i}
+                key={crypto.randomUUID()}
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
@@ -158,7 +158,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, i) => (
               <motion.div
-                key={i}
+                key={crypto.randomUUID()}
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

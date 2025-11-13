@@ -26,7 +26,9 @@ export default function MainBody() {
       { threshold: 0.2 },
     );
 
-    document.querySelectorAll<HTMLElement>(".main-content, .main-img").forEach((el) => observer.observe(el));
+    document.querySelectorAll<HTMLElement>(".main-content, .main-img").forEach((el) => {
+      observer.observe(el);
+    });
 
     return () => observer.disconnect();
   }, []);

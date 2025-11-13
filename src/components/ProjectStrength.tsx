@@ -97,7 +97,7 @@ export default function ProjectStrength() {
             <Accordion type="single" collapsible className="max-w-4xl mx-auto space-y-2">
               {projectStrength.map((service, i) => (
                 <AccordionItem
-                  key={i}
+                  key={crypto.randomUUID()}
                   value={`service-${i}`}
                   className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm"
                 >

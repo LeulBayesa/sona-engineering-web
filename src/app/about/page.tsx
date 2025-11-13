@@ -204,7 +204,7 @@ export default function AboutPage() {
           <Accordion type="single" collapsible className="max-w-4xl mx-auto space-y-4">
             {mainServices.map((service, i) => (
               <AccordionItem
-                key={i}
+                key={crypto.randomUUID()}
                 value={`service-${i}`}
                 className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm"
               >
@@ -217,8 +217,8 @@ export default function AboutPage() {
                 <AccordionContent className="px-8 pb-6">
                   <p className="text-foreground mb-6">{service.description}</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {service.features.map((feature, fIndex) => (
-                      <div key={fIndex} className="flex items-start gap-3">
+                    {service.features.map((feature, _fIndex) => (
+                      <div key={crypto.randomUUID()} className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-primary mt-0.5" />
                         <span className="text-foreground">{feature}</span>
                       </div>

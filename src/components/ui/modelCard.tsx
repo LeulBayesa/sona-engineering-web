@@ -2,6 +2,7 @@
 
 import { ClipboardList, Code2, Users } from "lucide-react";
 import { useLayoutEffect } from "react";
+import { Button } from "./button";
 
 const CardUI = () => {
   useLayoutEffect(() => {
@@ -18,7 +19,9 @@ const CardUI = () => {
       { threshold: 0.1 },
     );
 
-    cards.forEach((card) => observer.observe(card));
+    cards.forEach((card) => {
+      observer.observe(card);
+    });
     return () => observer.disconnect();
   }, []);
 
@@ -55,8 +58,8 @@ const CardUI = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-8">
           {models.map((model, index) => (
             <div
-              key={index}
-              className="model-card group relative bg-white rounded-2xl shadow-md p-8 opacity-0 translate-y-10 
+              key={crypto.randomUUID()}
+              className="model-card group relative bg-white rounded-2xl shadow-md p-8 opacity-0 translate-y-10
               hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-primary hover:-translate-y-2 flex flex-col"
               style={{ animationDelay: `${index / 9}s` }}
             >
@@ -72,20 +75,9 @@ const CardUI = () => {
                 <p className="text-gray-600 mb-8 leading-relaxed">{model.shortDescription}</p>
               </div>
 
-              <button
-                className="relative z-10 w-full bg-gradient-to-r from-primary to-primary/90 text-white py-3 rounded-xl font-semibold 
-                hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 flex items-center justify-center gap-2 mt-auto cursor-pointer"
-              >
+              <Button size="lg" className="text-white">
                 Learn More
-                <svg
-                  className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </button>
+              </Button>
             </div>
           ))}
         </div>

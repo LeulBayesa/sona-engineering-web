@@ -5,6 +5,7 @@ import { ArrowUpRight, Calendar, MapPin, Tag } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Slider, { type Settings } from "react-slick";
+import FALLBACK_SRC from "@/assets/images/s.svg";
 
 interface ProjectCardProps {
   title: string;
@@ -15,6 +16,25 @@ interface ProjectCardProps {
   category?: string;
   link?: string;
   index?: number;
+}
+
+function SlideImage({ src, alt }: { src: string; alt: string }) {
+  const [currentSrc, setCurrentSrc] = useState(src);
+
+  return (
+    <Image
+      src={currentSrc}
+      alt={alt}
+      fill
+      onError={() => {
+        if (currentSrc !== FALLBACK_SRC) setCurrentSrc(FALLBACK_SRC);
+      }}
+      className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+      placeholder="blur"
+      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/..."
+    />
+  );
 }
 
 export default function ProjectCard({
@@ -28,7 +48,6 @@ export default function ProjectCard({
   index = 0,
 }: ProjectCardProps) {
   const sliderRef = useRef<Slider>(null);
-  const FALLBACK_SRC = "/s.svg";
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -46,28 +65,11 @@ export default function ProjectCard({
       { threshold: 0.2 },
     );
 
-    cards.forEach((card) => observer.observe(card));
+    cards.forEach((card) => {
+      observer.observe(card);
+    });
     return () => observer.disconnect();
   }, []);
-
-  function SlideImage({ src, alt }: { src: string; alt: string }) {
-    const [currentSrc, setCurrentSrc] = useState(src);
-
-    return (
-      <Image
-        src={currentSrc}
-        alt={alt}
-        fill
-        onError={() => {
-          if (currentSrc !== FALLBACK_SRC) setCurrentSrc(FALLBACK_SRC);
-        }}
-        className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        placeholder="blur"
-        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/..."
-      />
-    );
-  }
 
   const settings: Settings = {
     dots: true,
@@ -84,7 +86,7 @@ export default function ProjectCard({
         <ul className="slick-dots">{dots}</ul>
       </div>
     ),
-    customPaging: () => <button aria-label="Slide indicator"></button>,
+    customPaging: () => <button type="button" aria-label="Slide indicator"></button>,
   };
 
   const cardVariants: Variants = {

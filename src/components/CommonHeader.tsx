@@ -45,8 +45,8 @@ export default function CommonHeader({ title, subTitle, src, alt, children, clas
             { src: rimg, pos: "bottom-1/3 left-10 animate-spin-slow" },
             { src: oimg, pos: "bottom-20 left-1/3 animate-movearound" },
             { src: timg, pos: "top-1/2 right-20 animate-spin-slow" },
-          ].map((img, i) => (
-            <div key={i} className={`absolute ${img.pos} z-0`}>
+          ].map((img, _i) => (
+            <div key={crypto.randomUUID()} className={`absolute ${img.pos} z-0`}>
               <Image src={img.src} alt="" aria-hidden="true" className="h-auto max-w-full" />
             </div>
           ))}

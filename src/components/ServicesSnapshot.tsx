@@ -21,7 +21,9 @@ export default function ServicesSnapshot() {
       { threshold: 0.2 },
     );
 
-    cards.forEach((card) => observer.observe(card));
+    cards.forEach((card) => {
+      observer.observe(card);
+    });
     return () => observer.disconnect();
   }, []);
 
@@ -66,7 +68,7 @@ export default function ServicesSnapshot() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-8">
           {services.map((service, i) => (
             <ServiceCard
-              key={i}
+              key={crypto.randomUUID()}
               index={i + 1}
               Icon={service.Icon}
               title={service.title}

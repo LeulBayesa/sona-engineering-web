@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, UsbIcon } from "lucide-react";
 import Modern from "../assets/images/Vector.svg";
 import ProjectCard from "./ProjectCard";
 import Watermark from "./Watermark";
@@ -81,7 +80,7 @@ export default function FeaturedProjects() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {projects.map((project, i) => (
-            <ProjectCard key={i} {...project} index={i} />
+            <ProjectCard key={crypto.randomUUID()} {...project} index={i} />
           ))}
         </div>
       </div>

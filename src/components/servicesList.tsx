@@ -1,8 +1,6 @@
 import {
-  ArrowRight,
   Award,
   Camera,
-  CheckCircle,
   ClipboardCheck,
   Clock,
   Cpu,

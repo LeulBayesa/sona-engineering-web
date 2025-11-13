@@ -62,6 +62,7 @@ export default function Testimonials() {
     ),
     customPaging: () => (
       <button
+        type="button"
         className="w-3 h-3 bg-primary/30 rounded-full hover:bg-primary transition-colors duration-300"
         aria-label="Slide indicator"
       />
@@ -126,7 +127,7 @@ export default function Testimonials() {
           <Slider {...settings}>
             {testimonials.map((t, i) => (
               <motion.div
-                key={i}
+                key={crypto.randomUUID()}
                 custom={i}
                 variants={cardVariants}
                 initial="initial"
