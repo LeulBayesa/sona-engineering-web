@@ -49,11 +49,8 @@ export default function Testimonials() {
     pauseOnHover: true,
     lazyLoad: "ondemand",
     responsive: [
-      { breakpoint: 1280, settings: { slidesToShow: 3 } },
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
       { breakpoint: 768, settings: { slidesToShow: 1 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
-      { breakpoint: 0, settings: { slidesToShow: 1 } },
     ],
     appendDots: (dots) => (
       <div>
